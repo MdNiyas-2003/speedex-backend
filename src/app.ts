@@ -16,7 +16,12 @@ app.use(
     credentials: true,
   })
 );app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Speedex Backend API is running 🚀",
+  });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/bookings", bookingRoutes);
